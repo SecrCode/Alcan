@@ -1,0 +1,12 @@
+module.exports = (client, message, args) => {
+
+
+
+}
+
+module.exports.help = {
+    name: "",
+    description: "",
+    category: "", // Tools, moderation, 4fun, dev
+    perm: "admin" // user, admin, mod, tester, dev
+}
