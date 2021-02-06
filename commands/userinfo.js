@@ -17,7 +17,8 @@ module.exports = async (client, message, args) => {
     
     module.exports.help = {
         name: "userinfo",
-        description: "Info about user.",
+        aliases: ["ui"],
+        description: "Info about  an user.",
         category: "Tools", // Tools, Moderation, 4fun, dev
         perm: "user" // user, admin, mod, tester, dev
     }

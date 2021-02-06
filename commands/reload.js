@@ -7,8 +7,9 @@ module.exports = (client, message, args) => {
         code = client.functions.requireUncached(`./commands/${args}.js`)
     }
 
-    catch {
+    catch(e) {
         message.channel.send("Wystąpił błąd podczas wczytywania (Czy napewno istnieje taki plik?)")
+    console.error(e)
     }
 
    client.cmds.set(args[0], code)
@@ -18,6 +19,7 @@ module.exports = (client, message, args) => {
 
 module.exports.help = {
     name: "reload",
+    aliases: [],
     description: "Reload a command!",
     category: "dev", // Tools, moderation, 4fun, dev
     perm: "dev" // user, admin, mod, tester, dev

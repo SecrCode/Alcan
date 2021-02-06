@@ -1,11 +1,5 @@
 module.exports = async (client, message, args) => {
-    let responses = [
-        "Yes",
-        "No",
-        "Maybe",
-        "Certainly",
-        "I'm not sure"
-    ]
+
     let embed = new client.disc.MessageEmbed()
     .setTitle(args.join(' '))
     .setColor(client.color)
@@ -16,6 +10,7 @@ module.exports = async (client, message, args) => {
     
     module.exports.help = {
         name: "8ball",
+        aliases: [],
         description: "Ask bot",
         category: "4fun", // Tools, Moderation, 4fun, dev
         perm: "user" // user, admin, mod, tester, dev

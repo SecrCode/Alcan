@@ -18,7 +18,8 @@ if(message.guild.vanityURLCode) embed.addField('Vanity invite URL', message.guil
     
     module.exports.help = {
         name: "serverinfo",
-        description: "Info about server.",
+        aliases: ["si"],
+        description: "Info about the guild you're in.",
         category: "Tools", // Tools, Moderation, 4fun, dev
         perm: "user" // user, admin, mod, tester, dev
     }

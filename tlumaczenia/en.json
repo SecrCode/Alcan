@@ -1,0 +1,57 @@
+{
+  "8ball": {
+    "responses": [
+      "Yes",
+      "No",
+      "Maybe",
+      "Certainly",
+      "I'm not sure"
+    ]
+  },
+  "ban": {
+    "noreason": "No reason provided.",
+    "nouser": "You need to specify an user!",
+    "error1": "An error occured while running the command!",
+    "error2": "Check if the bot has required permission to ban this user",
+    "ban": "Banned:",
+    "ban2": "Banned by:",
+    "reason": "Reason:"
+  },
+"config": {
+  "notspecified": "You didn't specify what to set to",
+  "wrongchannel": "You gave the wrong channel",
+  "settings": {
+  "1": "Prefix changed",
+  "2": "Welcome channel changed",
+  "3": "Goodbye channel changed",
+  "4": "Welcome text changed",
+  "5": "Goodbye text changed",
+  "6": "Welcome status changed",
+  "7": "Goodbye status changed",
+  "8": "Guild language changed"
+},
+  "default": {
+    "1": "Prefix",
+    "2": "Welcome channel",
+    "3": "Goodbye channel",
+    "4": "Welcome text",
+    "5": "Goodbye text",
+    "6": "Welcome enabled",
+    "7": "Welcome disabled"
+  },
+  "changes": [
+    "From",
+    "to"
+  ]
+},
+  "help": {
+    "all": "All categories:",
+    "4fun": "4Fun",
+    "tools": "Tools",
+    "mod": "Moderation"
+  },
+  "kick": {
+    "noperson": "You didn't give a person to kick",
+    "noreason": "No reason provided"
+  }
+}

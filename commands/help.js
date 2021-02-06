@@ -67,6 +67,7 @@ module.exports = (client, message, args) => {
 
 module.exports.help = {
     name: "help",
+    aliases: ["commands", "h"],
     description: "All commands listed!",
     category: "Tools",
     perm: "user"

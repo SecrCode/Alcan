@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "canvas": "^2.6.1",
     "dayjs": "^1.9.8",
     "discord.js-light": "^3.5.0",
+    "node-gyp": "^7.1.2",
     "rethinkdb": "^2.4.2",
     "statcord.js": "^3.1.4"
   },

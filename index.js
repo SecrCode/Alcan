@@ -10,7 +10,7 @@ let client = new discord.Client({
     cacheEmojis: false,
     cachePresences: false
 })
-client.config = require("config.json")
+client.config = require("./config.json")
 const statcord = new Statcord.Client({
     client,    key: client.config.statcord,
     postCpuStatistics: true, /* Whether to post memory statistics or not, defaults to true */
@@ -19,13 +19,14 @@ const statcord = new Statcord.Client({
 });
 client.disc = discord;
 client.cmds = new Map();
+client.aliases = new Map();
 client.statcord = statcord
 client.color = "#6600ff";
 client.version = "1.0.0";
 client.footer = `Alcan ${client.version}`;
 client.functions = require('./functions.js')
 client.on("ready", function() {
-    client.channels.fetch('803956669969072161');
+    client.channels.fetch('806900774105251860');
     console.log("Gotowy")
     statcord.autopost()
 })
@@ -41,9 +42,13 @@ r.connect( {host: 'localhost', port: 28015}, function(err, conn) {
 let commands = fs.readdirSync("./commands")
 commands.forEach(function (cmd) {
     try {
-        let code = require(`./commands/${cmd}`)
-        let cmdname = cmd.split(".")[0]
+        code = require(`./commands/${cmd}`)
+        cmdname = cmd.split(".")[0]
         client.cmds.set(cmdname, code)
+        // aliasy
+        code.help.aliases.forEach(function(alias){
+            client.aliases.set(alias, cmdname)
+        })
     }
     catch (e) {
         console.error(e)
@@ -65,7 +70,7 @@ events.forEach(function (evt) {
 // error handler
 process.on("unhandledRejection", err => {
     console.error(`Unhandled rejection: ${err}`);
-    client.channels.cache.get('803956669969072161').send(`Błąd: \n\`\`\`${err.stack}\`\`\``)
+    client.channels.cache.get('806900774105251860').send(`Błąd: \n\`\`\`${err.stack}\`\`\``)
   }); 
 client.login(client.config.token)
 

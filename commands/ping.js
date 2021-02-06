@@ -10,6 +10,7 @@ module.exports = async (client, message, args) => {
     
     module.exports.help = {
         name: "ping",
+        aliases: ["delay", "latency"],
         description: "Check bot ping",
         category: "Tools", // Tools, Moderation, 4fun, dev
         perm: "user" // user, admin, mod, tester, dev

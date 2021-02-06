@@ -28,6 +28,7 @@ module.exports = async (client, message, args) => {
     
     module.exports.help = {
         name: "kick",
+        aliases: [],
         description: "Kick an user in your guild.",
         category: "Moderation", // Tools, Moderation, 4fun, dev
         perm: "admin" // user, admin, mod, tester, dev

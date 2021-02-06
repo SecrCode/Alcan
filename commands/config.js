@@ -9,7 +9,7 @@ module.exports = async (client, message, args) => {
     let embed;
     switch (args[0]) { 
     case '1':
-        if(!args[1]) return message.reply(`You didn't specify what to set`)
+        if(!args[1]) return message.reply(`You didn't specify what to set to`)
             embed = new client.disc.MessageEmbed()
                 .setTitle('Prefix changed')
                 .setDescription(`From ${settings.prefix || "None"} to ${args[1]}`)
@@ -19,7 +19,7 @@ module.exports = async (client, message, args) => {
         message.channel.send(embed)
         break;
     case '2':
-        if(!args[1]) return message.reply(`You didn't specify what to set`)
+        if(!args[1]) return message.reply(`You didn't specify what to set to`)
         channel = message.mentions.channels.first() || client.channels.cache.get(args[0])
         if(!channel) return message.reply('You gave the wrong channel')
             embed = new client.disc.MessageEmbed()
@@ -31,7 +31,7 @@ module.exports = async (client, message, args) => {
         message.channel.send(embed)
         break;
     case '3':
-        if(!args[1]) return message.reply(`You didn't specify what to set`)
+        if(!args[1]) return message.reply(`You didn't specify what to set to`)
         channel = message.mentions.channels.first() || client.channels.cache.get(args[0])
         if(!channel) return message.reply('You gave the wrong channel')
             embed = new client.disc.MessageEmbed()
@@ -43,7 +43,7 @@ module.exports = async (client, message, args) => {
         message.channel.send(embed)
         break;
     case '4':
-        if(!args[1]) return message.reply(`You didn't specify what to set`)
+        if(!args[1]) return message.reply(`You didn't specify what to set to`)
             embed = new client.disc.MessageEmbed()
                 .setTitle('Welcome text changed')
                 .setDescription(`From ${settings.wtext || "None"} to ${args[1]}`)
@@ -54,7 +54,7 @@ module.exports = async (client, message, args) => {
         break;
         case '5':
             
-        if(!args[1]) return message.reply(`You didn't specify what to set`)
+        if(!args[1]) return message.reply(`You didn't specify what to set to`)
             embed = new client.disc.MessageEmbed()
                 .setTitle('Goodbye text changed')
                 .setDescription(`From ${settings.gtext || "None"} to ${args[1]}`)
@@ -85,6 +85,15 @@ module.exports = async (client, message, args) => {
             save('genabled', what)
         message.channel.send(embed)
         break;
+        case '8':
+            if (!args[1]) return message.reply("You didn't specify what to set to")
+            embed = new client.disc.MessageEmbed()
+                .setTitle("Guild language changed")
+                .setDescription(`From ${settings.lang} to ${args[1]}`)
+                .setFooter(client.footer)
+                .setFooter(client.color)
+            save('lang', args[1].toLowerCase())
+            break;
     default:
             embed = new client.disc.MessageEmbed()
                 .setTitle('Server settings')
@@ -104,6 +113,7 @@ module.exports = async (client, message, args) => {
 
 module.exports.help = {
     name: "config",
+    aliases: ["settings"],
     description: "Configure your server's settings!",
     category: "Tools",
     perm: "admin"

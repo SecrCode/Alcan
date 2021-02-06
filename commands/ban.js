@@ -29,7 +29,8 @@ message.channel.send(banembed)
 
 module.exports.help = {
     name: "ban",
-    description: "Ban an user in your guild.",
+    aliases: [],
+    descriptionen: "Ban an user in your guild.",
     category: "Moderation", // Tools, Moderation, 4fun, dev
     perm: "admin" // user, admin, mod, tester, dev
 }

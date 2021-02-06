@@ -18,7 +18,8 @@ module.exports = async (client, message, args) => {
 
 module.exports.help = {
   name: "eval",
+  aliases: ["evaluate", "run", "e"],
   description: "Evaluates your JS code. Works only for developers.",
-  category: "Dev",
+  category: "dev",
   perm: "dev" // user, moderator admin, tester,  dev
 }

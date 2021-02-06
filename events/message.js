@@ -35,7 +35,7 @@ module.exports = async (client, message) => {
     
     if (message.content.startsWith(prefix)) { // wtf
     let perm;
-        let cmd = client.cmds.get(cmdname)
+        let cmd = client.cmds.get(cmdname ) || client.cmds.get(client.aliases.get(cmdname))
         if (!cmd) return;
 
         let permsNeeded = cmd.help.perm
@@ -68,7 +68,7 @@ module.exports = async (client, message) => {
         
         cmd(client, message, args)
         if(cmd.help.category == "dev") return;
-    client.statcord.postCommand(cmdname, message.author.id)
+    client.statcord.postCommand(cmd.help.name, message.author.id)
 
     }
 }
